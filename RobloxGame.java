@@ -63,7 +63,7 @@ private class robloxGame{
         return maxPlayerCount;
     }
 
-
+    
     //setters for RobloxGame
 
     //sets current player count when called
@@ -71,12 +71,10 @@ private class robloxGame{
         this.currentPlayerCount = currentPlayerCount;
     }
 
-
     //set's favorites count when called
     public void setFavorites(long favorites){
         this.favorites = favorites;
     }
-    
     
     //set's name of game. might rethink this one since we don't
     //really want the name of the games changing ever once
@@ -93,14 +91,12 @@ private class robloxGame{
         this.gameID = gameID;
     }
 
-
     //I'm thinking the same thing for this one as well,
     //we probably don't want to change the genre of a game
     //once it's instantiated
     public void setGenre(String genre){
         this.genre = genre;
     }
-
 
     //sets like count of a RobloxGame when ran
     public void setLikes(long likes){
@@ -123,7 +119,6 @@ private class robloxGame{
     public void setVisits(long visits){
         this.visits = visits;
     }
-
 
 
 }
