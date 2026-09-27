@@ -7,17 +7,17 @@ private class robloxGame{
     private int currentPlayerCount;
     private String genre;
     private long visits;
-    private long favorites;
-    private long likes;
+    private int favorites;
+    private int likes;
 
     //we might want to do more work on this one
     //the setter might just compare current player counts
     //with the historical player count and change it based on
     //if the newest player count is the higher of the two values.
-    private long maxPlayerCount;
+    private int maxPlayerCount;
 
-    public robloxGame(String gameName, long gameID, long currentPlayerCount, String genre, long visits, long favorites,
-        long likes, long maxPlayerCount){
+    public robloxGame(String gameName, long gameID, int currentPlayerCount, String genre, long visits, int favorites,
+        int likes, int maxPlayerCount){
         this.gameName = gameName;
         this.gameID = gameID;
         this.currentPlayerCount = currentPlayerCount;
@@ -31,35 +31,35 @@ private class robloxGame{
 
     //getters for robloxGame
     
-    public getGameName(){
+    public String getGameName(){
         return gameName;
     }
 
-    public getGameID(){
+    public long getGameID(){
         return gameID;
     }
 
-    public  getCurrentPlayerCount(){
+    public int getCurrentPlayerCount(){
         return currentPlayerCount;
     }
 
-    public getGenre(){
+    public String getGenre(){
         return genre;
     }
 
-    public getVisits(){
+    public long getVisits(){
         return visits;
     }
     
-    public getFavorites(){
+    public int getFavorites(){
         return favorites;
     }
 
-    pubilc getLikes(){
+    public int getLikes(){
         return likes;
     }
 
-    public getMaxPlayerCount(){
+    public int getMaxPlayerCount(){
         return maxPlayerCount;
     }
 
