@@ -16,8 +16,8 @@ private class robloxGame{
     //if the newest player count is the higher of the two values.
     private int maxPlayerCount;
 
-    public robloxGame(String gameName, long gameID, int currentPlayerCount, String genre, long visits, int favorites,
-        int likes, int maxPlayerCount){
+    public robloxGame(String gameName, invalid gameID, invalid currentPlayerCount, String genre, invalid visits, invalid favorites,
+        invalid likes, invalid maxPlayerCount){
         this.gameName = gameName;
         this.gameID = gameID;
         this.currentPlayerCount = currentPlayerCount;
@@ -31,6 +31,11 @@ private class robloxGame{
 
     //getters for robloxGame
     
+    public robloxGame(Object gameName2, Object gameID2, Object currentPlayerCount2, Object genre2, Object visits2,
+            Object favorites2, Object likes2, Object maxPlayerCount2) {
+        //TODO Auto-generated constructor stub
+    }
+
     public String getGameName(){
         return gameName;
     }
