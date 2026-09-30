@@ -3,7 +3,7 @@ public class RobloxGame{
     //RobloxGame attributes
 
     private String gameName;
-    private long gameID;
+    private long universeID;
     private int currentPlayerCount;
     private String genre;
     private long visits;
@@ -16,10 +16,10 @@ public class RobloxGame{
     //if the newest player count is the higher of the two values.
     private int maxPlayerCount;
 
-    public RobloxGame(String gameName, long gameID, int currentPlayerCount, String genre, long visits, int favorites,
+    public RobloxGame(String gameName, long universeID, int currentPlayerCount, String genre, long visits, int favorites,
         int likes, int maxPlayerCount){
         this.gameName = gameName;
-        this.gameID = gameID;
+        this.universeID = universeID;
         this.currentPlayerCount = currentPlayerCount;
         this.genre = genre;
         this.visits = visits;
@@ -31,12 +31,23 @@ public class RobloxGame{
 
     //getters for robloxGame
     
+    public String getInfo(){
+        return "Game Name: " + gameName +
+                "\nGenre: " + genre +
+                "\nCurrent Player Count: " + currentPlayerCount +
+                "\nVisits: " + visits +
+                "\nFavorites: " + favorites +
+                "\nLikes: " + likes;
+                //might need to add max player count ie the historical player counts
+    }
+
+
     public String getGameName(){
         return gameName;
     }
 
-    public long getGameID(){
-        return gameID;
+    public long getUniverseID(){
+        return universeID;
     }
 
     public int getCurrentPlayerCount(){
@@ -87,8 +98,8 @@ public class RobloxGame{
     //rethink the possibility to chang this with a callable
     //methode since we don't want the game's id nums changing
 
-    public void setGameID(long gameID){
-        this.gameID = gameID;
+    public void setUniverseID(long universeID){
+        this.universeID = universeID;
     }
 
     //I'm thinking the same thing for this one as well,
@@ -103,13 +114,12 @@ public class RobloxGame{
         this.likes = likes;
     }
 
-    public void setMaxPlayerCount(long maxPlayerCount){
+    public void updateMaxPlayerCount(long maxPlayerCount, int currentPlayerCount){
         if(currentPlayerCount > maxPlayerCount){
-            maxPlayerCount = currentPlayerCount;
+            this.maxPlayerCount = currentPlayerCount;
         } 
-        //!!!we might want to look at this again!!! I'm not
-        //perfectly certain if we can just have a setter not return
-        //anything
+        //possible exception in the event that current or
+        //max player count is null
     }
 
     //sets visit count. this one is most likely fine since
