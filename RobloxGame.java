@@ -1,4 +1,4 @@
-private class robloxGame{
+public class RobloxGame{
 
     //RobloxGame attributes
 
@@ -16,7 +16,7 @@ private class robloxGame{
     //if the newest player count is the higher of the two values.
     private int maxPlayerCount;
 
-    public robloxGame(String gameName, long gameID, int currentPlayerCount, String genre, long visits, int favorites,
+    public RobloxGame(String gameName, long gameID, int currentPlayerCount, String genre, long visits, int favorites,
         int likes, int maxPlayerCount){
         this.gameName = gameName;
         this.gameID = gameID;
@@ -72,7 +72,7 @@ private class robloxGame{
     }
 
     //set's favorites count when called
-    public void setFavorites(long favorites){
+    public void setFavorites(int favorites){
         this.favorites = favorites;
     }
     
@@ -99,7 +99,7 @@ private class robloxGame{
     }
 
     //sets like count of a RobloxGame when ran
-    public void setLikes(long likes){
+    public void setLikes(int likes){
         this.likes = likes;
     }
 
