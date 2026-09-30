@@ -5,6 +5,7 @@ public class Main{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         
+
         System.out.println("Would you like to display some Roblox Game Data[Y/N]?");
         String begin = scanner.nextLine();
         

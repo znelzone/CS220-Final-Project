@@ -31,6 +31,16 @@ public class RobloxGame{
 
     //getters for robloxGame
     
+    public String getInfo(){
+        return "Game Name: " + gameName +
+                "\nGenre: " + genre +
+                "\nCurrent Player Count: " + currentPlayerCount +
+                "\nVisits: " + visits +
+                "\nFavorites: " + favorites +
+                "\nLikes: " + likes;
+                //might need to add max player count ie the historical player counts
+    }
+
     public String getGameName(){
         return gameName;
     }
@@ -103,13 +113,12 @@ public class RobloxGame{
         this.likes = likes;
     }
 
-    public void setMaxPlayerCount(long maxPlayerCount){
+    public void updateMaxPlayerCount(long maxPlayerCount, int currentPlayerCount){
         if(currentPlayerCount > maxPlayerCount){
-            maxPlayerCount = currentPlayerCount;
+            this.maxPlayerCount = currentPlayerCount;
         } 
-        //!!!we might want to look at this again!!! I'm not
-        //perfectly certain if we can just have a setter not return
-        //anything
+        //possible exception in the event that current or
+        //max player count is null
     }
 
     //sets visit count. this one is most likely fine since
