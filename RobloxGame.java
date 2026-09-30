@@ -1,9 +1,9 @@
-private class robloxGame{
+public class RobloxGame{
 
     //RobloxGame attributes
 
     private String gameName;
-    private long gameID;
+    private long universeID;
     private int currentPlayerCount;
     private String genre;
     private long visits;
@@ -16,10 +16,10 @@ private class robloxGame{
     //if the newest player count is the higher of the two values.
     private int maxPlayerCount;
 
-    public robloxGame(String gameName, long gameID, int currentPlayerCount, String genre, long visits, int favorites,
+    public RobloxGame(String gameName, long universeID, int currentPlayerCount, String genre, long visits, int favorites,
         int likes, int maxPlayerCount){
         this.gameName = gameName;
-        this.gameID = gameID;
+        this.universeID = universeID;
         this.currentPlayerCount = currentPlayerCount;
         this.genre = genre;
         this.visits = visits;
@@ -35,8 +35,8 @@ private class robloxGame{
         return gameName;
     }
 
-    public long getGameID(){
-        return gameID;
+    public long getUniverseID(){
+        return universeID;
     }
 
     public int getCurrentPlayerCount(){
@@ -72,7 +72,7 @@ private class robloxGame{
     }
 
     //set's favorites count when called
-    public void setFavorites(long favorites){
+    public void setFavorites(int favorites){
         this.favorites = favorites;
     }
     
@@ -87,8 +87,8 @@ private class robloxGame{
     //rethink the possibility to chang this with a callable
     //methode since we don't want the game's id nums changing
 
-    public void setGameID(long gameID){
-        this.gameID = gameID;
+    public void setUniverseID(long universeID){
+        this.universeID = universeID;
     }
 
     //I'm thinking the same thing for this one as well,
@@ -99,7 +99,7 @@ private class robloxGame{
     }
 
     //sets like count of a RobloxGame when ran
-    public void setLikes(long likes){
+    public void setLikes(int likes){
         this.likes = likes;
     }
 
