@@ -1,4 +1,13 @@
-public class RobloxGame{
+import java.io.Serializable;
+
+
+/**
+ * RobloxGame represents a game from the website Roblox.
+ * 
+ * @author Zackary Nelson, Bradley Patton, Peyton Slusser, and Ulises Royal
+ * @version since 
+ */
+public class RobloxGame implements Serializable{
 
     //RobloxGame attributes
 
@@ -16,6 +25,19 @@ public class RobloxGame{
     //if the newest player count is the higher of the two values.
     private int maxPlayerCount;
 
+
+    /**
+     * Constructs the game with the specified information.
+     * 
+     * @param gameName the name of this Roblox game
+     * @param universeID the universe ID of this Roblox game
+     * @param currentPlayerCount the concurent player count of this Roblox game
+     * @param genre the genre of this Roblox game
+     * @param visits the overall number of times users have visited this Roblox game
+     * @param favorites the favorites count of this Roblox game
+     * @param likes the count of likes for this Roblox game
+     * @param maxPlayerCount the sum of historical player counts for this Roblox game
+     */
     public RobloxGame(String gameName, long universeID, int currentPlayerCount, String genre, long visits, int favorites,
         int likes, int maxPlayerCount){
         this.gameName = gameName;
@@ -31,6 +53,11 @@ public class RobloxGame{
 
     //getters for robloxGame
     
+    /**
+     * Creates and returns a string represntation of this Roblox game.
+     * 
+     * @return a string representation of this Roblox game
+     */
     public String getInfo(){
         return "Game Name: " + gameName +
                 "\nGenre: " + genre +
@@ -42,6 +69,10 @@ public class RobloxGame{
     }
 
 
+    /**
+     * 
+     * @return
+     */
     public String getGameName(){
         return gameName;
     }

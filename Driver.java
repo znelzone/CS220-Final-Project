@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main{
+public class Driver{
 
 
 
@@ -12,18 +12,18 @@ public class Main{
 
         if(begin.equalsIgnoreCase("y") || begin.equalsIgnoreCase("yes")){
             System.out.println("Starting Search!");
-            //will eventually call the DataRetreiver which makes api calls to search for games to release
-            //their data
-        } else {
-
-        }
+            
+            //creates the roblox data retriever and creates a set of 10 temp games
             RobloxDataRetriever retriever = new RobloxDataRetriever();
-            String data = retriever.getData("https://games.roblox.com/v1/games?universeIds=6035872082");
+            retriever.updateGameData();
 
+            System.out.println("Finished Search!");
+        } else {
+            System.out.println("See you next time!");
+        }
+           
 
-        System.out.println(data);
-
-        System.out.println("Finished Search!");
+        
         scanner.close();
     }
 }
