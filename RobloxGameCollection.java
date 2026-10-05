@@ -1,7 +1,15 @@
-//Don't forget to cite joes example program from the linked list chapter
+/*
+Data Structure and Class adapted from
+Title: Java Software Structures
+Code Name: Program of Study
+Author: Josheph Chase, John Lewis
+Date: 2014
+Type: Source Code
+IEEE Citation: J. Lewis, J. Chase, and Piyali Sengupta, Java software structures : designing and using data structures. 
+                Harlow, Essex: Pearson Education Limited, pp. 133-134, 2014.
+ */
 
 import java.io.FileInputStream;
-
 //import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -13,8 +21,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * Represents a RobloxGameCollection, a list of games retreived from the Roblox
+ * api catalog.
  * 
- * RobloxGameCollection
+ * @version 9-3-2026
+ * @since 9-3-2026
  */
 public class RobloxGameCollection implements Iterable<RobloxGame>, Serializable{
     

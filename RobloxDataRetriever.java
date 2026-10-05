@@ -3,6 +3,11 @@ import java.net.URI;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+/**
+ * Retreives data about Roblox Games from the Roblox API.
+ * Sends HTTP requests to Roblox API endpoints
+ * 
+ */
 public class RobloxDataRetriever{
 
 //will mainly be the class where we utilize the
@@ -13,6 +18,17 @@ public class RobloxDataRetriever{
     private HttpClient client;
     private String VOTES_URL = "https://games.roblox.com/v1/games/votes";
 
+    /**
+     * Constructs a RobloxDataRetriever, creating the HTTP client used
+     * to send request to the Roblox API. Also creates the collection
+     * used to store RobloxGame objects.
+     * 
+     * Currently calls initializeGamesTemp() to fill our collection with
+     * while game creation automation is being developed.
+     * 
+     * @version 10-5-2026
+     * @since 9-26-2026
+     */
     public RobloxDataRetriever() {
     client = HttpClient.newHttpClient();
     ourCollection = new RobloxGameCollection();
@@ -22,11 +38,26 @@ public class RobloxDataRetriever{
     }
 
 
+    /**
+     * Creates a String representing a URL API request that concatinates
+     * a universeID into the URL.
+     * 
+     * @return String containing a URL concatination
+     * @since 10-3-2026
+     */
+    public String buildMainRequestURL(long universeID){
+        return "https://games.roblox.com/v1/games?universeIds=" +
+        universeID +
+        "&fields=name%2C%20playing%2C%20visits%2C%20genre%2C%20favoritedCount";
+    }
+
 
     /**
      * A temporary method designed to create ten games for the Roblox API
      * to gather other Roblox games using recomended data from the respective
-     * ten games.
+     * ten games. Each game is added to the RobloxGameCollection.
+     * 
+     * @since 9-30-2026
      */
     public void initializeGamesTemp(){
         //rivals
@@ -62,6 +93,14 @@ public class RobloxDataRetriever{
     }
 
 
+    /**
+     * Sends a GET request to the specified URL and retreives the
+     * response from the API.
+     * 
+     * @param url the URL that the HTTP request will be sent to
+     * @return a String containing the body of the HTTP response
+     * @throws Exception
+     */
     public String getData(String url) throws Exception {
 
         HttpRequest request = HttpRequest.newBuilder()
@@ -75,18 +114,6 @@ public class RobloxDataRetriever{
         );
 
         return response.body();
-    }
-
-    /**
-     * Creates a String representing a URL API request that concatinates
-     * a universeID into the URL.
-     * 
-     * @return String containing a URL concatination
-     */
-    public String buildMainRequestURL(long universeID){
-        return "https://games.roblox.com/v1/games?universeIds=" +
-        universeID +
-        "&fields=name%2C%20playing%2C%20visits%2C%20genre%2C%20favoritedCount";
     }
 
 

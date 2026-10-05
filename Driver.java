@@ -18,10 +18,12 @@ public class Driver{
             retriever.updateGameData();
 
             System.out.println("Finished Search!");
-        } else {
+        } else if(begin.equalsIgnoreCase("n") || begin.equalsIgnoreCase("no")){
             System.out.println("See you next time!");
+            
+        } else {
+            System.out.println("Answer was neither [Y/N] couldn't search");
         }
-           
 
         
         scanner.close();
