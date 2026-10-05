@@ -100,6 +100,7 @@ public class RobloxDataRetriever{
      * @param url the URL that the HTTP request will be sent to
      * @return a String containing the body of the HTTP response
      * @throws Exception
+     * @since 10-4-2026
      */
     public String getData(String url) throws Exception {
 
@@ -113,20 +114,45 @@ public class RobloxDataRetriever{
                 HttpResponse.BodyHandlers.ofString()
         );
 
-        return response.body();
+        if(response.statusCode() == 200){
+            return response.body();
+        }
+
+        //if there was no response from the endpoint
+        //ie anything other than the 200 status code
+        //return null
+        return null;
     }
 
 
-
+    /**
+     * Retrieves updated data for each RobloxGame currently stored in
+     * the collection. The universeID of each game is used to build an
+     * API request URL, and the resulting response is retreived.
+     * 
+     * Currently prints the JSON response data. This method will later
+     * use the data to update the attributes of each RobloxGame.
+     * 
+     * @throws Exception 
+     * @since 10-4-2026
+     */
     public void updateGameData() throws Exception{
         for(RobloxGame robloxGame : ourCollection){
             long universeID = robloxGame.getUniverseID();
             String url = buildMainRequestURL(universeID);
             String json = getData(url);
 
-
-            System.out.println("Universe ID: " + universeID);
-            System.out.println(json + "\n");
+            if(json == null){
+                //if the response from the website didn't contain a 200
+                //status code ie didn't send anything back for the program
+                //to use
+                System.out.println("Cound not retrieve data for: " + universeID);
+            } else {
+                //if a response came back
+                System.out.println("Universe ID: " + universeID);
+                System.out.println(json + "\n");
+            }
+            
         }
 
     }
